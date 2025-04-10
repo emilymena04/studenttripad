@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TripAdvisor | Emily Mena, 2025</title>
+<style type="text/css">
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(backgrndgimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: auto;
+    height: 99px;
+    position: relative;
+    left: 55px;
+}
+.logo-link:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 4px rgba(0, 175, 135, 0.5));
+}
+.header-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    transition: color 0.3s ease;
+}
+.header-links a:hover {
+    color: #00af87;
+    cursor: pointer;
+}
+.header-links {
+    position: relative;
+    right: 115px; 
+}
+.login-btn {
+    background-color: #00af87;
+    color: rgba(0,0,0,1.00);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 23px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.login-btn:hover {
+    background-color: #009a76;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.adventure-text {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin: 40px 0;
+}
+.adventure-text h1 {
+    margin-top: 68px;
+    margin-right: 68px;
+    margin-left: 68px;
+    margin-bottom: 68px;
+    font-weight: bold;
+    color: rgba(0,0,0,1.00);
+    font-size: 65px;
+}
+.adventure-text h1 {
+    margin: 68px;
+    font-weight: bold;
+    color: black;
+    font-size: 65px;
+    text-shadow: 
+        -1px -1px 0 white,
+         1px -1px 0 white,
+        -1px  1px 0 white,
+         1px  1px 0 white;
+}
+.flight-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.flight-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+.flight-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.flight-form input[type="text"],
+.flight-form input[type="number"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+#travelers {
+  width: 120px;
+}
+.wrapper {
+    width: 1366px;
+    margin: 32px auto;
+    display: block;
+    border-radius: 16px;
+    background-color: rgba(0,0,0,0.50);
+}
+.search-btn {
+  background-color: #00af87;
+  color: rgba(0,0,0,1.00);
+  border: none;
+  padding: 6px 16px;
+  border-radius: 23px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.search-btn:hover {
+  background-color: #009a76;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.search-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hotel-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hotel-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+.hotel-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.hotel-form input[type="text"],
+.hotel-form input[type="number"],
+.hotel-form input[type="date"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+#rooms {
+  width: 120px;
+}
+.search-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.search-btn {
+  background-color: #00af87;
+  color: rgba(0,0,0,1.00);
+  border: none;
+  padding: 6px 16px;
+  border-radius: 23px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.search-btn:hover {
+  background-color: #009a76;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+#Tabs1 {
+    background-color: rgba(255,255,255,0.70);
+    background-image: none;
+}
+#Tabs1 ul {
+    background-image: none;
+    margin: 8px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.60);
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+}
+.car-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.car-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-form input[type="text"],
+.car-form input[type="datetime-local"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+.location-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.location-group .form-group {
+  width: 48%;
+}
+.date-time-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.date-time-group .form-group {
+  width: 48%;
+}
+.activities-form input[type="date"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.activities-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.activities-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+footer {
+    background-color: rgba(255,255,255,0.51);
+    color: rgba(0,0,0,1);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 1.4;
+    border-top: 1px solid #ccc;
+}
+footer p {
+    font-family: sans-serif;
+    color: rgba(0,0,0,1.00);
+}
+</style>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.tabs.min.css" rel="stylesheet" type="text/css">
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.tabs.min.js"></script>
+</head>
+<body>
+	<div class="overlay"></div>
+<header>
+<a href="#" class="logo-link">
+  <img src="TripAdLogo.png" alt="TripAdvisor Logo" class="logo">
+</a>
+	<nav class="header-links">
+    <a href="#">Help</a> |
+    <a href="#">Register</a> 
+	<button class="login-btn">Login</button>
+  </nav>
+</header>
+<div class="adventure-text">
+	<h1>Adventure Awaits..</h1>
+</div>
+<div class="wrapper">
+  <div id="Tabs1">
+    <ul>
+      <li><a href="#tabs-1">Flights</a></li>
+      <li><a href="#tabs-2">Hotels</a></li>
+      <li><a href="#tabs-3">Cars</a></li>
+      <li><a href="#tabs-4">Activities</a></li>
+    </ul>
+    <div id="tabs-1">	
+  <form class="flight-form" id="flight-form">
+    <div class="form-group">
+      <label for="from">From:</label>
+      <input type="text" id="from" name="from" placeholder="City or Airport">
+    </div>
+    <div class="form-group">
+      <label for="to">To:</label>
+      <input type="text" id="to" name="to" placeholder="City or Airport">
+    </div>
+    <div class="form-group">
+      <label for="departing">Departing:</label>
+      <input type="date" id="departing" name="departing">
+    </div>
+    <div class="form-group">
+      <label for="returning">Returning:</label>
+      <input type="date" id="returning" name="returning">
+    </div>
+    <div class="form-group" id="travelers-group">
+      <label for="travelers">Travelers:</label>
+      <input type="number" id="travelers" name="travelers" min="1" value="1">
+    </div>
+    <div class="search-btn-wrapper">
+      <button class="search-btn" type="button">Search</button>
+    </div>
+  </form>
+    </div>
+<div id="tabs-2">
+  <form class="hotel-form" id="hotel-form">
+    <div class="form-group">
+      <label for="going-to">Going To:</label>
+      <input type="text" id="going-to" name="going-to" placeholder="City or Destination">
+    </div>
+    <div class="form-group">
+      <label for="rooms">Rooms:</label>
+      <input type="number" id="rooms" name="rooms" min="1" value="1">
+    </div>
+    <div class="form-group">
+      <label for="check-in">Check-In:</label>
+      <input type="date" id="check-in" name="check-in">
+    </div>
+    <div class="form-group">
+      <label for="check-out">Check-Out:</label>
+      <input type="date" id="check-out" name="check-out">
+    </div>
+    <div class="search-btn-wrapper">
+      <button class="search-btn" type="button">Search</button>
+    </div>
+  </form>
+</div>  
+    <div id="tabs-3">
+  <form class="car-form" id="car-form">
+    <div class="location-group">
+      <div class="form-group">
+        <label for="pick-up-location">Pick-Up Location:</label>
+        <input type="text" id="pick-up-location" name="pick-up-location" placeholder="Pick-Up Location">
+      </div>
+      <div class="form-group">
+        <label for="drop-off-location">Drop-Off Location:</label>
+        <input type="text" id="drop-off-location" name="drop-off-location" placeholder="Drop-Off Location">
+      </div>
+    </div>
+    <div class="date-time-group">
+      <div class="form-group">
+        <label for="pick-up-date">Pick-Up Date and Time:</label>
+        <input type="datetime-local" id="pick-up-date" name="pick-up-date">
+      </div>
+      <div class="form-group">
+        <label for="drop-off-date">Drop-Off Date and Time:</label>
+        <input type="datetime-local" id="drop-off-date" name="drop-off-date">
+      </div>
+    </div>
+    
+    <div class="search-btn-wrapper">
+      <button class="search-btn" type="button">Search</button>
+    </div>
+  </form>
+    </div>
+	<div id="tabs-4">
+  <form class="activities-form" id="activities-form">
+    <div class="form-group">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" placeholder="City or Activity">
+    </div>
+    <div class="form-group">
+      <label for="from-date">From Date:</label>
+      <input type="date" id="from-date" name="from-date" class="date-input">
+    </div>
+    <div class="form-group">
+      <label for="to-date">To Date:</label>
+      <input type="date" id="to-date" name="to-date" class="date-input">
+    </div>
+    <div class="search-btn-wrapper">
+      <button class="search-btn" type="button">Search Activities</button>
+    </div>
+  </form>
+</div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function() {
+	$( "#Tabs1" ).tabs(); 
+  $('#flight-form .search-btn, #hotel-form .search-btn').click(function(event) {
+    event.preventDefault();
+  });
+});
+</script>
+<footer>
+  <p>© 2025, Emily Mena. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+</footer>
+</body>
+</html>
+
